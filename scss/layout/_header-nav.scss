@@ -1,0 +1,133 @@
+header {
+  border-bottom: 1px solid #ececec;
+}
+.header {
+  background-color: getColor('white-bg-color');
+
+  position: relative;
+  @media screen and (min-width: 768px) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+.header .nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Site nav */
+
+.site-nav {
+  display: none;
+
+  @media screen and(min-width:768px) {
+    display: flex;
+    margin-left: 88px;
+  }
+}
+@media screen and(min-width:768px) {
+  .main-nav {
+    display: flex;
+    align-items: center;
+  }
+
+  .site-nav-link {
+    display: block;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    color: getColor('title-text-color');
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover,
+    &:focus {
+      color: getColor('accent-color');
+    }
+  }
+  .site-nav .item + .item {
+    margin-left: 50px;
+  }
+
+  .site-nav-link.current {
+    color: getColor('accent-color');
+  }
+  .site-nav .item {
+    position: relative;
+  }
+  .site-nav-link.current::after {
+    @media screen and(min-width:768px) {
+      position: absolute;
+      bottom: -1px;
+      border-radius: 2px;
+      content: '';
+      display: block;
+      width: 100%;
+      height: 4px;
+      background-color: getColor('accent-color');
+    }
+  }
+}
+
+/* Auth nav */
+.auth-nav {
+  display: none;
+
+  @media screen and(min-width:768px) {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+  }
+  @media screen and(min-width:1200px) {
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
+  }
+}
+.auth-nav .item + .item {
+  @media screen and(min-width:1200px) {
+    margin-left: 50px;
+  }
+}
+.auth-nav .item {
+  @media screen and(max-width:1199px) {
+    margin-bottom: 10px;
+  }
+}
+.auth-nav .item:last-child {
+  @media screen and(max-width:1199px) {
+    margin-bottom: 0px;
+  }
+}
+.auth-nav-link {
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: getColor('primary-text-color');
+  text-decoration: none;
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  &:focus {
+    color: getColor('accent-color');
+  }
+  @media screen and(min-width:768px) {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.link-icon {
+  height: 16px;
+  width: 16px;
+  margin-right: 10px;
+  fill: currentColor;
+}
